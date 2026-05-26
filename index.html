@@ -4,413 +4,563 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Digityal — Création de sites web</title>
-  <meta name="description" content="Digityal crée des sites web, e-commerce, landing pages et applications sur mesure." />
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f5f5f7;
-      color: #111;
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",sans-serif;
+      background:#f5f5f7;
+      color:#1d1d1f;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
     }
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: blur(20px);
-      padding: 18px 22px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #eee;
+    header{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(255,255,255,0.72);
+      backdrop-filter:blur(20px);
+      border-bottom:1px solid rgba(0,0,0,0.05);
+      padding:18px 24px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
 
-    .logo {
-      font-size: 22px;
-      font-weight: 800;
+    .logo{
+      font-size:22px;
+      font-weight:600;
+      letter-spacing:-1px;
     }
 
-    .nav-btn {
-      background: #111;
-      color: white;
-      padding: 12px 18px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 14px;
+    .nav-btn{
+      background:#111;
+      color:white;
+      text-decoration:none;
+      padding:13px 18px;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:500;
+      transition:0.25s ease;
     }
 
-    section {
-      padding: 70px 22px;
-      max-width: 1100px;
-      margin: auto;
+    .nav-btn:hover{
+      transform:scale(1.02);
+      opacity:0.9;
     }
 
-    .hero {
-      text-align: center;
-      padding-top: 80px;
+    section{
+      max-width:1200px;
+      margin:auto;
+      padding:90px 22px;
     }
 
-    .badge {
-      display: inline-block;
-      background: white;
-      padding: 10px 16px;
-      border-radius: 999px;
-      font-size: 14px;
-      color: #555;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-      margin-bottom: 24px;
+    .hero{
+      text-align:center;
+      padding-top:70px;
     }
 
-    h1 {
-      font-size: clamp(42px, 10vw, 82px);
-      line-height: 0.95;
-      letter-spacing: -3px;
-      margin-bottom: 22px;
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:rgba(255,255,255,0.75);
+      border:1px solid rgba(255,255,255,0.6);
+      backdrop-filter:blur(20px);
+      padding:12px 18px;
+      border-radius:999px;
+      font-size:14px;
+      color:#6e6e73;
+      margin-bottom:28px;
+      box-shadow:0 10px 40px rgba(0,0,0,0.05);
     }
 
-    .hero p {
-      font-size: 19px;
-      color: #555;
-      max-width: 620px;
-      margin: 0 auto 32px;
-      line-height: 1.5;
+    h1{
+      font-size:clamp(52px,10vw,92px);
+      line-height:0.92;
+      letter-spacing:-5px;
+      font-weight:600;
+      max-width:900px;
+      margin:auto;
+      margin-bottom:28px;
     }
 
-    .buttons {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 45px;
+    .hero p{
+      font-size:21px;
+      line-height:1.45;
+      color:#6e6e73;
+      max-width:650px;
+      margin:auto;
+      margin-bottom:38px;
+      font-weight:400;
     }
 
-    .btn {
-      padding: 15px 22px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 15px;
+    .buttons{
+      display:flex;
+      justify-content:center;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom:55px;
     }
 
-    .btn-dark {
-      background: #111;
-      color: white;
+    .btn{
+      text-decoration:none;
+      padding:16px 24px;
+      border-radius:999px;
+      font-size:15px;
+      font-weight:500;
+      transition:0.25s ease;
     }
 
-    .btn-light {
-      background: white;
-      color: #111;
-      border: 1px solid #ddd;
+    .btn:hover{
+      transform:scale(1.02);
     }
 
-    .hero-img {
-      width: 100%;
-      height: 360px;
-      border-radius: 34px;
+    .btn-dark{
+      background:#111;
+      color:white;
+    }
+
+    .btn-light{
+      background:white;
+      color:#111;
+      border:1px solid #e5e5e5;
+    }
+
+    .hero-image{
+      width:100%;
+      height:500px;
+      border-radius:42px;
+      overflow:hidden;
+      position:relative;
       background:
-        radial-gradient(circle at 30% 20%, #dbeafe, transparent 35%),
-        radial-gradient(circle at 70% 30%, #e9d5ff, transparent 35%),
-        linear-gradient(135deg, #ffffff, #e5e7eb);
-      box-shadow: 0 30px 80px rgba(0,0,0,0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
+      radial-gradient(circle at top left,#dbeafe,transparent 30%),
+      radial-gradient(circle at bottom right,#ede9fe,transparent 35%),
+      linear-gradient(135deg,#ffffff,#ececec);
+      box-shadow:0 40px 120px rgba(0,0,0,0.12);
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
 
-    .device {
-      width: 78%;
-      height: 230px;
-      background: rgba(255,255,255,0.85);
-      border-radius: 28px;
-      box-shadow: 0 30px 70px rgba(0,0,0,0.18);
-      border: 1px solid rgba(255,255,255,0.8);
-      padding: 22px;
+    .mockup{
+      width:82%;
+      height:320px;
+      background:rgba(255,255,255,0.78);
+      border:1px solid rgba(255,255,255,0.8);
+      backdrop-filter:blur(20px);
+      border-radius:34px;
+      box-shadow:
+      0 30px 80px rgba(0,0,0,0.12),
+      inset 0 1px 0 rgba(255,255,255,0.7);
+      padding:28px;
     }
 
-    .device-bar {
-      width: 90px;
-      height: 8px;
-      background: #111;
-      border-radius: 999px;
-      margin-bottom: 28px;
+    .mockup-top{
+      width:90px;
+      height:8px;
+      border-radius:999px;
+      background:#111;
+      margin-bottom:28px;
     }
 
-    .device-line {
-      height: 18px;
-      border-radius: 999px;
-      background: #ddd;
-      margin-bottom: 14px;
+    .line{
+      height:18px;
+      border-radius:999px;
+      background:#e5e5e5;
+      margin-bottom:16px;
     }
 
-    .device-line.short {
-      width: 55%;
+    .line.small{
+      width:60%;
     }
 
-    h2 {
-      font-size: 34px;
-      letter-spacing: -1px;
-      margin-bottom: 14px;
-      text-align: center;
+    h2{
+      font-size:48px;
+      font-weight:600;
+      letter-spacing:-3px;
+      text-align:center;
+      margin-bottom:16px;
     }
 
-    .section-subtitle {
-      text-align: center;
-      color: #666;
-      margin-bottom: 32px;
+    .subtitle{
+      text-align:center;
+      color:#6e6e73;
+      margin-bottom:42px;
+      font-size:18px;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
     }
 
-    .card {
-      background: white;
-      padding: 24px;
-      border-radius: 26px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+    .pricing-grid{
+      grid-template-columns:repeat(3,1fr);
     }
 
-    .card h3 {
-      font-size: 19px;
-      margin-bottom: 10px;
+    .card{
+      background:rgba(255,255,255,0.72);
+      backdrop-filter:blur(20px);
+      padding:30px;
+      border-radius:34px;
+      box-shadow:
+      0 4px 30px rgba(0,0,0,0.04),
+      inset 0 1px 0 rgba(255,255,255,0.7);
+      border:1px solid rgba(255,255,255,0.6);
+      transition:0.3s ease;
     }
 
-    .card p {
-      color: #666;
-      line-height: 1.5;
-      font-size: 15px;
+    .card:hover{
+      transform:translateY(-4px);
     }
 
-    .pricing {
-      grid-template-columns: repeat(3, 1fr);
+    .card h3{
+      font-size:22px;
+      font-weight:600;
+      letter-spacing:-1px;
+      margin-bottom:12px;
     }
 
-    .price-card {
-      position: relative;
+    .card p{
+      font-size:15px;
+      line-height:1.5;
+      color:#6e6e73;
     }
 
-    .popular {
-      border: 2px solid #111;
-      transform: scale(1.03);
+    .popular{
+      border:1px solid #111;
     }
 
-    .tag {
-      display: inline-block;
-      background: #111;
-      color: white;
-      padding: 7px 12px;
-      border-radius: 999px;
-      font-size: 12px;
-      margin-bottom: 14px;
+    .tag{
+      display:inline-block;
+      background:#111;
+      color:white;
+      padding:8px 14px;
+      border-radius:999px;
+      font-size:12px;
+      margin-bottom:18px;
     }
 
-    .price {
-      font-size: 30px;
-      font-weight: 900;
-      margin: 14px 0;
+    .price{
+      font-size:42px;
+      font-weight:600;
+      letter-spacing:-3px;
+      margin:18px 0;
     }
 
-    .benefits {
-      grid-template-columns: repeat(4, 1fr);
+    .benefits{
+      grid-template-columns:repeat(4,1fr);
     }
 
-    .benefit {
-      text-align: center;
-      font-weight: 700;
+    .benefit{
+      text-align:center;
+      font-size:18px;
+      font-weight:500;
     }
 
-    .cta {
-      background: #111;
-      color: white;
-      border-radius: 34px;
-      text-align: center;
-      padding: 55px 24px;
+    .cta{
+      background:#111;
+      border-radius:42px;
+      padding:70px 28px;
+      text-align:center;
+      color:white;
     }
 
-    .cta p {
-      color: #ccc;
-      margin: 14px 0 28px;
+    .cta p{
+      color:#bdbdbd;
+      margin:18px 0 34px;
+      font-size:18px;
     }
 
-    footer {
-      text-align: center;
-      color: #777;
-      padding: 35px 20px;
-      font-size: 14px;
+    footer{
+      text-align:center;
+      padding:45px 20px;
+      color:#6e6e73;
+      font-size:14px;
     }
 
-    @media (max-width: 800px) {
-      section {
-        padding: 55px 18px;
+    @media(max-width:900px){
+
+      section{
+        padding:70px 18px;
       }
 
-      h1 {
-        font-size: 52px;
+      h1{
+        font-size:58px;
+        letter-spacing:-4px;
       }
 
-      .hero p {
-        font-size: 17px;
+      h2{
+        font-size:40px;
+      }
+
+      .hero p{
+        font-size:18px;
       }
 
       .grid,
-      .pricing,
-      .benefits {
-        grid-template-columns: 1fr;
+      .pricing-grid,
+      .benefits{
+        grid-template-columns:1fr;
       }
 
-      .popular {
-        transform: none;
+      .hero-image{
+        height:360px;
+        border-radius:30px;
       }
 
-      .hero-img {
-        height: 300px;
-        border-radius: 28px;
+      .mockup{
+        height:240px;
       }
 
-      .buttons {
-        flex-direction: column;
+      .buttons{
+        flex-direction:column;
       }
 
-      .btn {
-        width: 100%;
-        text-align: center;
+      .btn{
+        width:100%;
       }
 
-      header {
-        padding: 16px 18px;
+      .cta{
+        border-radius:30px;
       }
     }
+
   </style>
 </head>
 
 <body>
 
-  <header>
-    <div class="logo">Digityal.</div>
-    <a href="mailto:contact@digityal.fr" class="nav-btn">Devis gratuit</a>
-  </header>
+<header>
+  <div class="logo">Digityal.</div>
 
-  <section class="hero">
-    <div class="badge">Agence digitale premium</div>
+  <a href="mailto:contact@digityal.fr" class="nav-btn">
+    Devis gratuit
+  </a>
+</header>
 
-    <h1>Votre présence digitale, simplement.</h1>
+<section class="hero">
+
+  <div class="badge">
+    ✦ Agence digitale premium
+  </div>
+
+  <h1>
+    Donnez une présence digitale élégante à votre entreprise.
+  </h1>
+
+  <p>
+    Sites web, e-commerce et applications modernes conçus pour développer votre activité.
+  </p>
+
+  <div class="buttons">
+    <a href="mailto:contact@digityal.fr" class="btn btn-dark">
+      Demander un devis
+    </a>
+
+    <a href="tel:+33600000000" class="btn btn-light">
+      Appeler
+    </a>
+  </div>
+
+  <div class="hero-image">
+    <div class="mockup">
+      <div class="mockup-top"></div>
+
+      <div class="line"></div>
+      <div class="line small"></div>
+      <div class="line"></div>
+      <div class="line small"></div>
+    </div>
+  </div>
+
+</section>
+
+<section>
+
+  <h2>Nos services</h2>
+
+  <p class="subtitle">
+    Des solutions digitales modernes et pensées pour convertir.
+  </p>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Site vitrine</h3>
+      <p>Présentez votre activité avec un site moderne et professionnel.</p>
+    </div>
+
+    <div class="card">
+      <h3>E-commerce</h3>
+      <p>Une boutique en ligne premium et optimisée mobile.</p>
+    </div>
+
+    <div class="card">
+      <h3>Landing page</h3>
+      <p>Une page pensée pour générer des contacts et des ventes.</p>
+    </div>
+
+    <div class="card">
+      <h3>Application web</h3>
+      <p>Des outils digitaux sur mesure adaptés à vos besoins.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+
+  <h2>Tarifs</h2>
+
+  <p class="subtitle">
+    Des offres adaptées à votre projet digital.
+  </p>
+
+  <div class="grid pricing-grid">
+
+    <div class="card popular">
+
+      <div class="tag">
+        Populaire
+      </div>
+
+      <h3>Site vitrine</h3>
+
+      <div class="price">
+        450€
+      </div>
+
+      <p>
+        Site moderne, responsive et optimisé mobile.
+      </p>
+
+      <br><br>
+
+      <a href="mailto:contact@digityal.fr" class="btn btn-dark">
+        Demander un devis
+      </a>
+
+    </div>
+
+    <div class="card">
+
+      <h3>E-commerce</h3>
+
+      <div class="price">
+        Sur devis
+      </div>
+
+      <p>
+        Boutique en ligne complète et expérience premium.
+      </p>
+
+      <br><br>
+
+      <a href="mailto:contact@digityal.fr" class="btn btn-light">
+        Demander un devis
+      </a>
+
+    </div>
+
+    <div class="card">
+
+      <h3>Application web</h3>
+
+      <div class="price">
+        Sur devis
+      </div>
+
+      <p>
+        Développement personnalisé selon vos besoins.
+      </p>
+
+      <br><br>
+
+      <a href="mailto:contact@digityal.fr" class="btn btn-light">
+        Demander un devis
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+
+  <h2>Pourquoi Digityal ?</h2>
+
+  <p class="subtitle">
+    Une approche moderne, simple et efficace.
+  </p>
+
+  <div class="grid benefits">
+
+    <div class="card benefit">
+      Design premium
+    </div>
+
+    <div class="card benefit">
+      Mobile-first
+    </div>
+
+    <div class="card benefit">
+      Rapide
+    </div>
+
+    <div class="card benefit">
+      Sur mesure
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+
+  <div class="cta">
+
+    <h2>
+      Un projet digital ?
+    </h2>
 
     <p>
-      Sites web, e-commerce et applications sur mesure pour développer votre activité.
+      Parlons ensemble de votre futur site ou application.
     </p>
 
     <div class="buttons">
-      <a href="mailto:contact@digityal.fr" class="btn btn-dark">Demander un devis</a>
-      <a href="tel:+33600000000" class="btn btn-light">Appeler</a>
+
+      <a href="mailto:contact@digityal.fr" class="btn btn-light">
+        Envoyer un mail
+      </a>
+
+      <a href="tel:+33600000000" class="btn btn-light">
+        Appeler
+      </a>
+
+      <a href="https://wa.me/33600000000" class="btn btn-light">
+        WhatsApp
+      </a>
+
     </div>
 
-    <div class="hero-img">
-      <div class="device">
-        <div class="device-bar"></div>
-        <div class="device-line"></div>
-        <div class="device-line short"></div>
-        <div class="device-line"></div>
-      </div>
-    </div>
-  </section>
+  </div>
 
-  <section>
-    <h2>Nos services</h2>
-    <p class="section-subtitle">Des solutions digitales claires, modernes et efficaces.</p>
+</section>
 
-    <div class="grid">
-      <div class="card">
-        <h3>Site vitrine</h3>
-        <p>Un site professionnel pour présenter votre activité.</p>
-      </div>
-
-      <div class="card">
-        <h3>E-commerce</h3>
-        <p>Une boutique en ligne fluide et moderne.</p>
-      </div>
-
-      <div class="card">
-        <h3>Landing page</h3>
-        <p>Une page pensée pour convertir vos visiteurs.</p>
-      </div>
-
-      <div class="card">
-        <h3>Application web</h3>
-        <p>Un outil digital conçu selon vos besoins.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Tarifs</h2>
-    <p class="section-subtitle">Des offres adaptées à votre projet.</p>
-
-    <div class="grid pricing">
-      <div class="card price-card popular">
-        <span class="tag">Populaire</span>
-        <h3>Site vitrine</h3>
-        <div class="price">Dès 450€</div>
-        <p>Site moderne, responsive et optimisé mobile.</p>
-        <br>
-        <a href="mailto:contact@digityal.fr" class="btn btn-dark">Demander un devis</a>
-      </div>
-
-      <div class="card price-card">
-        <h3>E-commerce</h3>
-        <div class="price">Sur devis</div>
-        <p>Boutique en ligne complète et sur mesure.</p>
-        <br>
-        <a href="mailto:contact@digityal.fr" class="btn btn-light">Demander un devis</a>
-      </div>
-
-      <div class="card price-card">
-        <h3>Application web</h3>
-        <div class="price">Sur devis</div>
-        <p>Application personnalisée selon vos besoins.</p>
-        <br>
-        <a href="mailto:contact@digityal.fr" class="btn btn-light">Demander un devis</a>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Pourquoi Digityal ?</h2>
-
-    <div class="grid benefits">
-      <div class="card benefit">Design premium</div>
-      <div class="card benefit">Mobile-first</div>
-      <div class="card benefit">Rapide</div>
-      <div class="card benefit">Sur mesure</div>
-    </div>
-  </section>
-
-  <section>
-    <div class="cta">
-      <h2>Un projet digital ?</h2>
-      <p>Parlons de votre site, application ou stratégie digitale.</p>
-
-      <div class="buttons">
-        <a href="mailto:contact@digityal.fr" class="btn btn-light">Envoyer un mail</a>
-        <a href="tel:+33600000000" class="btn btn-light">Appeler maintenant</a>
-        <a href="https://wa.me/33600000000" class="btn btn-light">WhatsApp</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    Digityal — Sites web • Applications • Marketing digital
-  </footer>
+<footer>
+  Digityal — Sites web • Applications • Marketing digital
+</footer>
 
 </body>
 </html>
